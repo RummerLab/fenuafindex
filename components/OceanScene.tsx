@@ -72,7 +72,7 @@ const QUAD_FRAG = /* glsl */ `
     // Speed and amplitude are tuned so the pattern reads as moving within a
     // second without lifting mean brightness enough to hurt text contrast.
     vec2 q = p * 3.1 + vec2(uTime * 0.131, uTime * 0.193);
-    q += (uPointer * vec2(aspect, -1.0)) * 0.45 * uPointerStrength;
+    q += (uPointer * vec2(aspect, -1.0)) * 0.15 * uPointerStrength;
     float warp = fbm(q + fbm(q + uTime * 0.158));
     float caustic = pow(smoothstep(0.34, 0.82, warp), 1.7);
     float surface = 0.2 + 0.8 * smoothstep(0.3, 1.0, uv.y);
@@ -246,9 +246,15 @@ export default function OceanScene({ className = "" }: { className?: string }) {
     let running = false;
     let inView = true;
 
+    // Seconds for the pointer to ease ~63% of the way to the cursor. Larger
+    // is calmer. Applied against elapsed time rather than per frame, so a
+    // 144Hz display does not chase the cursor 2.4x faster than a 60Hz one.
+    const POINTER_TAU = 0.85;
+
     const frame = () => {
-      uniforms.uTime.value += Math.min(clock.getDelta(), 0.1) * timeScale;
-      uniforms.uPointer.value.lerp(pointerTarget, 0.08);
+      const dt = Math.min(clock.getDelta(), 0.1);
+      uniforms.uTime.value += dt * timeScale;
+      uniforms.uPointer.value.lerp(pointerTarget, 1 - Math.exp(-dt / POINTER_TAU));
       renderer.render(scene, camera);
       if (running) raf = requestAnimationFrame(frame);
     };
