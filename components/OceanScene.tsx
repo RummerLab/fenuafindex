@@ -21,6 +21,7 @@ const QUAD_FRAG = /* glsl */ `
   uniform float uTime;
   uniform vec2 uRes;
   uniform vec2 uPointer;
+  uniform float uPointerStrength;
   uniform float uScroll;
   varying vec2 vUv;
 
@@ -52,8 +53,9 @@ const QUAD_FRAG = /* glsl */ `
 
   void main() {
     vec2 uv = vUv;
+    float aspect = uRes.x / max(uRes.y, 1.0);
     vec2 p = uv;
-    p.x *= uRes.x / max(uRes.y, 1.0);
+    p.x *= aspect;
 
     // Depth gradient: sunlit lagoon at the top, abyss at the bottom.
     vec3 cTop = vec3(0.055, 0.320, 0.365);
@@ -62,18 +64,29 @@ const QUAD_FRAG = /* glsl */ `
     vec3 col = mix(cDeep, cMid, smoothstep(0.0, 0.55, uv.y));
     col = mix(col, cTop, smoothstep(0.55, 1.08, uv.y));
 
-    // Warped caustic shimmer, strongest near the surface.
-    vec2 q = p * 3.1 + vec2(uTime * 0.035, uTime * 0.06) + uPointer * 0.12;
-    float warp = fbm(q + fbm(q + uTime * 0.04));
-    float caustic = pow(smoothstep(0.42, 0.9, warp), 2.2);
+    // Cursor position in uv space (pointer is in NDC, y flipped).
+    vec2 pointerUv = vec2((uPointer.x + 1.0) * 0.5, (1.0 - uPointer.y) * 0.5);
+
+    // Warped caustic shimmer, strongest near the surface. The cursor drags
+    // the noise domain, so the water visibly stirs around it.
+    // Speed and amplitude are tuned so the pattern reads as moving within a
+    // second without lifting mean brightness enough to hurt text contrast.
+    vec2 q = p * 3.1 + vec2(uTime * 0.1875, uTime * 0.275);
+    q += (uPointer * vec2(aspect, -1.0)) * 0.45 * uPointerStrength;
+    float warp = fbm(q + fbm(q + uTime * 0.225));
+    float caustic = pow(smoothstep(0.34, 0.82, warp), 1.7);
     float surface = 0.2 + 0.8 * smoothstep(0.3, 1.0, uv.y);
-    col += caustic * surface * vec3(0.10, 0.42, 0.40);
+    col += caustic * surface * vec3(0.16, 0.672, 0.64);
 
     // Soft angled god rays.
     float ang = p.x * 0.85 + (1.0 - uv.y) * 0.5;
-    float rays = sin(ang * 9.0 - uTime * 0.16) * sin(ang * 13.0 + uTime * 0.09);
-    rays = smoothstep(0.5, 1.0, rays);
-    col += rays * smoothstep(0.3, 1.0, uv.y) * vec3(0.05, 0.22, 0.24) * 0.6;
+    float rays = sin(ang * 9.0 - uTime * 0.825) * sin(ang * 13.0 + uTime * 0.475);
+    rays = smoothstep(0.45, 1.0, rays);
+    col += rays * smoothstep(0.3, 1.0, uv.y) * vec3(0.05, 0.22, 0.24) * 0.9;
+
+    // A pool of light gathering under the cursor.
+    float halo = smoothstep(0.42, 0.0, length((uv - pointerUv) * vec2(aspect, 1.0)));
+    col += halo * uPointerStrength * (0.35 + 0.65 * caustic) * vec3(0.06, 0.26, 0.25);
 
     // Gentle vignette and scroll fade into the page background.
     float vig = smoothstep(1.35, 0.4, length(uv - vec2(0.5, 0.58)));
@@ -95,8 +108,8 @@ const SNOW_VERT = /* glsl */ `
   void main() {
     vec3 pos = position;
     // Slow upward drift with a lazy horizontal sway, wrapped in NDC space.
-    pos.y = mod(position.y + uTime * aSpeed * 0.045 + aSeed, 2.0) - 1.0;
-    pos.x += sin(uTime * 0.22 * aSpeed + aSeed * 12.0) * 0.03;
+    pos.y = mod(position.y + uTime * aSpeed * 0.09 + aSeed, 2.0) - 1.0;
+    pos.x += sin(uTime * 0.3 * aSpeed + aSeed * 12.0) * 0.03;
     vAlpha = 0.25 + 0.75 * fract(aSeed * 7.31);
     gl_Position = vec4(pos.xy, 0.0, 1.0);
     gl_PointSize = aScale * uRes.y * 0.006;
@@ -131,7 +144,12 @@ export default function OceanScene({ className = "" }: { className?: string }) {
       return; // No WebGL — the CSS gradient fallback stays visible.
     }
 
-    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    // Reduced motion tones the scene down to a slow ambient drift and drops
+    // the cursor parallax entirely — it never freezes the scene outright,
+    // which would read as a broken hero rather than a calmer one.
+    const motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let timeScale = motionQuery.matches ? 0.25 : 1;
+    let pointerStrength = motionQuery.matches ? 0 : 1;
 
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.domElement.style.width = "100%";
@@ -143,9 +161,10 @@ export default function OceanScene({ className = "" }: { className?: string }) {
     const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
 
     const uniforms = {
-      uTime: { value: prefersReduced ? 40 : 0 },
+      uTime: { value: 0 },
       uRes: { value: new THREE.Vector2(1, 1) },
       uPointer: { value: new THREE.Vector2(0, 0) },
+      uPointerStrength: { value: pointerStrength },
       uScroll: { value: 0 },
     };
 
@@ -193,7 +212,10 @@ export default function OceanScene({ className = "" }: { className?: string }) {
     scene.add(snow);
 
     const resize = () => {
-      const { clientWidth: w, clientHeight: h } = mount;
+      // Fall back to the viewport if the mount has not been laid out yet,
+      // so the canvas never sticks at its 300x150 default.
+      const w = mount.clientWidth || window.innerWidth;
+      const h = mount.clientHeight || window.innerHeight;
       if (w === 0 || h === 0) return;
       renderer.setSize(w, h, false);
       uniforms.uRes.value.set(w, h);
@@ -201,6 +223,7 @@ export default function OceanScene({ className = "" }: { className?: string }) {
     resize();
     const resizeObserver = new ResizeObserver(resize);
     resizeObserver.observe(mount);
+    window.addEventListener("resize", resize);
 
     const pointerTarget = new THREE.Vector2(0, 0);
     const onPointerMove = (event: PointerEvent) => {
@@ -221,49 +244,60 @@ export default function OceanScene({ className = "" }: { className?: string }) {
     const clock = new THREE.Clock();
     let raf = 0;
     let running = false;
+    let inView = true;
 
     const frame = () => {
-      uniforms.uTime.value += Math.min(clock.getDelta(), 0.1);
-      uniforms.uPointer.value.lerp(pointerTarget, 0.04);
+      uniforms.uTime.value += Math.min(clock.getDelta(), 0.1) * timeScale;
+      uniforms.uPointer.value.lerp(pointerTarget, 0.08);
       renderer.render(scene, camera);
       if (running) raf = requestAnimationFrame(frame);
     };
 
     const start = () => {
-      if (running || prefersReduced) return;
+      if (running) return;
       running = true;
-      clock.getDelta();
+      clock.getDelta(); // drop the idle gap so time does not jump
       raf = requestAnimationFrame(frame);
     };
     const stop = () => {
       running = false;
       cancelAnimationFrame(raf);
     };
+    // Only pause for things that make the work pointless: a hidden tab or a
+    // hero scrolled off screen. The loop starts immediately either way, so a
+    // quiet IntersectionObserver can never leave the scene frozen.
+    const sync = () => {
+      if (inView && !document.hidden) start();
+      else stop();
+    };
 
-    // A single styled frame for reduced-motion users; a paused loop when
-    // the hero is offscreen or the tab is hidden.
     renderer.render(scene, camera);
+    sync();
 
     const intersection = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && !document.hidden) start();
-        else stop();
+        inView = entry.isIntersecting;
+        sync();
       },
-      { threshold: 0.02 },
+      { threshold: 0 },
     );
     intersection.observe(mount);
+    document.addEventListener("visibilitychange", sync);
 
-    const onVisibility = () => {
-      if (document.hidden) stop();
-      else start();
+    const onMotionChange = (event: MediaQueryListEvent) => {
+      timeScale = event.matches ? 0.25 : 1;
+      pointerStrength = event.matches ? 0 : 1;
+      uniforms.uPointerStrength.value = pointerStrength;
     };
-    document.addEventListener("visibilitychange", onVisibility);
+    motionQuery.addEventListener("change", onMotionChange);
 
     return () => {
       stop();
       intersection.disconnect();
       resizeObserver.disconnect();
-      document.removeEventListener("visibilitychange", onVisibility);
+      window.removeEventListener("resize", resize);
+      document.removeEventListener("visibilitychange", sync);
+      motionQuery.removeEventListener("change", onMotionChange);
       window.removeEventListener("pointermove", onPointerMove);
       window.removeEventListener("scroll", onScroll);
       quadGeo.dispose();
