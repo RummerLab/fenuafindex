@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+@theme {
+  /* Ocean depth palette — deep lagoon blues into shallow turquoise */
+  --color-abyss: #04121e;
+  --color-deep: #072536;
+  --color-mid: #0d3d54;
+  --color-lagoon: #12768f;
+  --color-shallow: #2fb3b0;
+  --color-foam: #7fe3d4;
+  --color-sand: #f2e9dc;
+  --color-coral: #ff7a59;
+
+  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+:root {
+  --ink: #eaf6f6;
+  --ink-muted: #a7c4ce;
+  --surface: var(--color-abyss);
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background-color: var(--surface);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--color-shallow);
+  color: var(--color-abyss);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-foam);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Scroll-reveal: elements start shifted, .is-visible settles them.
+   Reduced-motion users get the final state immediately. */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Caustic light shimmer across section dividers */
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate3d(-4%, 0, 0) scale(1.05);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate3d(4%, -2%, 0) scale(1.12);
+    opacity: 0.8;
+  }
+}
+
+.drift {
+  animation: drift 18s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .drift {
+    animation: none;
+  }
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.text-pretty {
+  text-wrap: pretty;
+}
+
+/* Hairline gradient rule used between sections */
+.hairline {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in oklab, var(--color-shallow) 45%, transparent),
+    transparent
+  );
+}

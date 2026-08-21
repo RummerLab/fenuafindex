@@ -1,0 +1,31 @@
+# Fenua FINdex
+
+> Fenua FINdex is a marine-conservation technology project that uses digital ecology, AI-assisted photo identification and citizen science to recognise and monitor individual blacktip reef sharks (Carcharhinus melanopterus) in French Polynesia. It is co-led by researchers at James Cook University (Rummer Lab / Physioshark program) and IREMP, builds on more than a decade of shark monitoring in Mo'orea, and is supported by the IUCN BESTLIFE2030 programme (project FP-8040), co-funded by the European Union.
+
+Key facts:
+
+- A blacktip reef shark's dorsal-fin pigmentation pattern is unique to the individual, differs between the left and right sides of the same shark, and remains recognisable as juveniles grow — validated in peer-reviewed research (Journal of Fish Biology) using a catalogue of 928 individually identified sharks.
+- Because left and right fin patterns differ, every photograph is recorded with the side it shows; both profiles are linked to one individual.
+- AI shortlists candidate matches for each new photo; trained researchers validate every match before it enters a shark's record. Uncertain matches are never presented as fact.
+- The project integrates annual photographic collections gathered since 2016 and field monitoring logs reaching back to 2013, from the Physioshark program in Mo'orea.
+- Fenua FINdex is the citizen-science arm of the Physioshark program (https://physioshark.org).
+- The public sighting portal and shark catalogue are in development. Until launch, sightings are submitted by email to photos@fenuafindex.com with the date, location, and which side of the shark the photo shows.
+- Sensitive shark-nursery locations are never published. Contributors keep copyright of their photos and can withdraw submissions at any time.
+- "Fenua" means land/homeland in Tahitian; "FINdex" joins fin + index.
+
+## Pages
+
+- [Home (English)](https://fenuafindex.com/en): Project overview — every fin tells a story.
+- [Accueil (Français)](https://fenuafindex.com/fr): Présentation du projet en français.
+- [About](https://fenuafindex.com/en/about): Project story, official titles, funding, milestones and its place within the Physioshark program.
+- [The Science](https://fenuafindex.com/en/science): How dorsal-fin photo-identification works, left/right asymmetry, the AI-assisted matching workflow, and key research.
+- [Get Involved](https://fenuafindex.com/en/get-involved): How to photograph a dorsal fin for identification and submit a sighting; consent and contributor rights.
+- [Team & Partners](https://fenuafindex.com/en/team): Project leadership (James Cook University, IREMP, CNRS) and partner institutions.
+- [Contact](https://fenuafindex.com/en/contact): How to reach the team.
+- [Privacy & Data Policy](https://fenuafindex.com/en/privacy): How photographs, sighting data and personal data are handled.
+
+## Contact
+
+- Shark sighting submissions and enquiries: photos@fenuafindex.com
+- Parent research program: https://physioshark.org
+- Scientific lead's lab: https://rummerlab.com
