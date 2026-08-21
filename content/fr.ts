@@ -364,14 +364,6 @@ export const fr: Dictionary = {
           initials: "CS",
           href: null,
         },
-        {
-          name: "Dr Serge Planes",
-          affiliation: "CNRS",
-          role: "Jeux de données à long terme · infrastructure de terrain",
-          bio: "Mène depuis des décennies des recherches sur les récifs de Polynésie française, apportant données de suivi à long terme et leadership scientifique.",
-          initials: "SP",
-          href: null,
-        },
       ],
     },
     acknowledgement:

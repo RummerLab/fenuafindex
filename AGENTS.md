@@ -10,7 +10,7 @@ Stack: Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS 4, Three.js. 
 
 ## Project overview
 
-Public site for Fenua FINdex, an IUCN BESTLIFE2030–funded project (FP-8040, co-funded by the European Union) using AI-assisted photo identification and citizen science to recognise and monitor individual blacktip reef sharks (*Carcharhinus melanopterus*) in French Polynesia. Co-led by researchers at James Cook University (RummerLab / Physioshark program) and IREMP, building on more than a decade of shark monitoring in Mo'orea led by Prof. Jodie Rummer and Dr Serge Planes (CNRS).
+Public site for Fenua FINdex, an IUCN BESTLIFE2030–funded project (FP-8040, co-funded by the European Union) using AI-assisted photo identification and citizen science to recognise and monitor individual blacktip reef sharks (*Carcharhinus melanopterus*) in French Polynesia. Co-led by researchers at James Cook University (RummerLab / Physioshark program) and IREMP, building on more than a decade of shark monitoring in Mo'orea led by Prof. Jodie Rummer.
 
 The project is funded and in its build phase — no public shark catalogue or submission portal exists yet. Sightings are collected by email (`photos@fenuafindex.com`) until that platform ships. Don't describe the catalogue or AI matching as live or available today.
 

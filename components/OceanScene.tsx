@@ -71,16 +71,16 @@ const QUAD_FRAG = /* glsl */ `
     // the noise domain, so the water visibly stirs around it.
     // Speed and amplitude are tuned so the pattern reads as moving within a
     // second without lifting mean brightness enough to hurt text contrast.
-    vec2 q = p * 3.1 + vec2(uTime * 0.1875, uTime * 0.275);
+    vec2 q = p * 3.1 + vec2(uTime * 0.131, uTime * 0.193);
     q += (uPointer * vec2(aspect, -1.0)) * 0.45 * uPointerStrength;
-    float warp = fbm(q + fbm(q + uTime * 0.225));
+    float warp = fbm(q + fbm(q + uTime * 0.158));
     float caustic = pow(smoothstep(0.34, 0.82, warp), 1.7);
     float surface = 0.2 + 0.8 * smoothstep(0.3, 1.0, uv.y);
     col += caustic * surface * vec3(0.16, 0.672, 0.64);
 
     // Soft angled god rays.
     float ang = p.x * 0.85 + (1.0 - uv.y) * 0.5;
-    float rays = sin(ang * 9.0 - uTime * 0.825) * sin(ang * 13.0 + uTime * 0.475);
+    float rays = sin(ang * 9.0 - uTime * 0.578) * sin(ang * 13.0 + uTime * 0.333);
     rays = smoothstep(0.45, 1.0, rays);
     col += rays * smoothstep(0.3, 1.0, uv.y) * vec3(0.05, 0.22, 0.24) * 0.9;
 
@@ -108,8 +108,8 @@ const SNOW_VERT = /* glsl */ `
   void main() {
     vec3 pos = position;
     // Slow upward drift with a lazy horizontal sway, wrapped in NDC space.
-    pos.y = mod(position.y + uTime * aSpeed * 0.09 + aSeed, 2.0) - 1.0;
-    pos.x += sin(uTime * 0.3 * aSpeed + aSeed * 12.0) * 0.03;
+    pos.y = mod(position.y + uTime * aSpeed * 0.063 + aSeed, 2.0) - 1.0;
+    pos.x += sin(uTime * 0.21 * aSpeed + aSeed * 12.0) * 0.03;
     vAlpha = 0.25 + 0.75 * fract(aSeed * 7.31);
     gl_Position = vec4(pos.xy, 0.0, 1.0);
     gl_PointSize = aScale * uRes.y * 0.006;

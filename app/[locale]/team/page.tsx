@@ -32,7 +32,7 @@ export default async function TeamPage({
       <section className="bg-abyss">
         <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8">
           <SectionHeading eyebrow={team.people.eyebrow} title={team.people.title} />
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
+          <div className="mt-12 grid gap-6 sm:grid-cols-2">
             {team.people.items.map((person, i) => (
               <Reveal
                 key={person.name}

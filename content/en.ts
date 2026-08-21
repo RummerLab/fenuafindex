@@ -360,14 +360,6 @@ export const en = {
           initials: "CS",
           href: null,
         },
-        {
-          name: "Dr Serge Planes",
-          affiliation: "CNRS",
-          role: "Long-term datasets · field infrastructure",
-          bio: "Leads decades of reef research in French Polynesia, contributing long-term monitoring data and scientific leadership.",
-          initials: "SP",
-          href: null,
-        },
       ],
     },
     acknowledgement:

@@ -99,7 +99,7 @@ body {
 }
 
 .drift {
-  animation: drift 18s ease-in-out infinite;
+  animation: drift 26s ease-in-out infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
