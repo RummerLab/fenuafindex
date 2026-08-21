@@ -119,7 +119,7 @@ export const fr: Dictionary = {
       items: [
         {
           name: "James Cook University",
-          role: "Direction scientifique — Rummer Lab & Physioshark",
+          role: "Direction scientifique — RummerLab & Physioshark",
         },
         { name: "IREMP", role: "Coordination du projet, Polynésie française" },
         { name: "CNRS", role: "Jeux de données à long terme & infrastructure de terrain" },
@@ -352,8 +352,9 @@ export const fr: Dictionary = {
           name: "Pr Jodie Rummer",
           affiliation: "James Cook University",
           role: "Codirection du projet · direction scientifique",
-          bio: "Biologiste marine spécialiste de la physiologie des poissons et de la conservation ; dirige le programme Physioshark et le Rummer Lab à JCU.",
+          bio: "Biologiste marine spécialiste de la physiologie des poissons et de la conservation ; dirige le programme Physioshark et le RummerLab à JCU.",
           initials: "JR",
+          href: "https://jodierummer.com",
         },
         {
           name: "Dr Clémentine Séguigne",
@@ -361,6 +362,7 @@ export const fr: Dictionary = {
           role: "Codirection du projet · coordination",
           bio: "Scientifique marine coordonnant le projet en Polynésie française, forte d'une grande expérience des sciences participatives et du suivi des requins.",
           initials: "CS",
+          href: null,
         },
         {
           name: "Dr Serge Planes",
@@ -368,6 +370,7 @@ export const fr: Dictionary = {
           role: "Jeux de données à long terme · infrastructure de terrain",
           bio: "Mène depuis des décennies des recherches sur les récifs de Polynésie française, apportant données de suivi à long terme et leadership scientifique.",
           initials: "SP",
+          href: null,
         },
       ],
     },
@@ -379,7 +382,7 @@ export const fr: Dictionary = {
       items: [
         {
           name: "James Cook University",
-          role: "Institution scientifique porteuse — siège du Rummer Lab et du programme Physioshark.",
+          role: "Institution scientifique porteuse — siège du RummerLab et du programme Physioshark.",
           href: "https://www.jcu.edu.au",
         },
         {
@@ -398,7 +401,7 @@ export const fr: Dictionary = {
           href: "https://physioshark.org",
         },
         {
-          name: "Rummer Lab",
+          name: "RummerLab",
           role: "Le groupe de recherche de la Pr Jodie Rummer à James Cook University.",
           href: "https://rummerlab.com",
         },
@@ -430,7 +433,7 @@ export const fr: Dictionary = {
     partnersTitle: "Autour du projet",
     partners: [
       { name: "Physioshark Project", href: "https://physioshark.org" },
-      { name: "Rummer Lab — James Cook University", href: "https://rummerlab.com" },
+      { name: "RummerLab — James Cook University", href: "https://rummerlab.com" },
       { name: "IUCN BESTLIFE2030", href: "https://www.bestlife2030.org" },
     ],
   },

@@ -2,7 +2,7 @@
 
 Public website for **Fenua FINdex**: a conservation-technology project using digital ecology, AI-assisted photo identification and citizen science to recognise and monitor individual blacktip reef sharks (*Carcharhinus melanopterus*) in French Polynesia.
 
-The project is co-led by researchers at James Cook University (Rummer Lab / [Physioshark](https://physioshark.org)) and IREMP, and supported by the IUCN BESTLIFE2030 programme (project FP-8040), co-funded by the European Union.
+The project is co-led by researchers at James Cook University (RummerLab / [Physioshark](https://physioshark.org)) and IREMP, and supported by the IUCN BESTLIFE2030 programme (project FP-8040), co-funded by the European Union.
 
 ## Stack
 

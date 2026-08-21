@@ -42,7 +42,20 @@ export default async function TeamPage({
                 <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-lagoon to-mid font-display text-xl text-foam">
                   {person.initials}
                 </div>
-                <h3 className="mt-6 font-display text-2xl tracking-tight">{person.name}</h3>
+                <h3 className="mt-6 font-display text-2xl tracking-tight">
+                  {person.href ? (
+                    <a
+                      href={person.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="transition-colors hover:text-foam"
+                    >
+                      {person.name} <span aria-hidden="true">↗</span>
+                    </a>
+                  ) : (
+                    person.name
+                  )}
+                </h3>
                 <p className="mt-1 text-sm text-foam">{person.affiliation}</p>
                 <p className="mt-3 text-xs font-semibold uppercase tracking-[0.15em] text-shallow">
                   {person.role}

@@ -22,13 +22,20 @@
   color-scheme: dark;
 }
 
-html {
+/* Also set on body: body's overflow-x below propagates to the viewport, and
+   in that case the root element's scroll-behavior may not be what applies. */
+html,
+body {
   scroll-behavior: smooth;
+}
+
+html {
   -webkit-text-size-adjust: 100%;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html {
+  html,
+  body {
     scroll-behavior: auto;
   }
 }

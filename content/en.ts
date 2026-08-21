@@ -116,7 +116,7 @@ export const en = {
       items: [
         {
           name: "James Cook University",
-          role: "Scientific lead — Rummer Lab & Physioshark",
+          role: "Scientific lead — RummerLab & Physioshark",
         },
         { name: "IREMP", role: "Project coordination, French Polynesia" },
         { name: "CNRS", role: "Long-term datasets & field infrastructure" },
@@ -348,8 +348,9 @@ export const en = {
           name: "Prof. Jodie Rummer",
           affiliation: "James Cook University",
           role: "Project co-lead · scientific lead",
-          bio: "Marine biologist specialising in fish physiology and conservation; leads the Physioshark program and the Rummer Lab at JCU.",
+          bio: "Marine biologist specialising in fish physiology and conservation; leads the Physioshark program and RummerLab at JCU.",
           initials: "JR",
+          href: "https://jodierummer.com",
         },
         {
           name: "Dr Clémentine Séguigne",
@@ -357,6 +358,7 @@ export const en = {
           role: "Project co-lead · coordination",
           bio: "Marine scientist coordinating the project in French Polynesia, with deep experience in community science and shark monitoring.",
           initials: "CS",
+          href: null,
         },
         {
           name: "Dr Serge Planes",
@@ -364,6 +366,7 @@ export const en = {
           role: "Long-term datasets · field infrastructure",
           bio: "Leads decades of reef research in French Polynesia, contributing long-term monitoring data and scientific leadership.",
           initials: "SP",
+          href: null,
         },
       ],
     },
@@ -375,7 +378,7 @@ export const en = {
       items: [
         {
           name: "James Cook University",
-          role: "Scientific lead institution — home of the Rummer Lab and the Physioshark program.",
+          role: "Scientific lead institution — home of RummerLab and the Physioshark program.",
           href: "https://www.jcu.edu.au",
         },
         {
@@ -394,7 +397,7 @@ export const en = {
           href: "https://physioshark.org",
         },
         {
-          name: "Rummer Lab",
+          name: "RummerLab",
           role: "Prof. Jodie Rummer's research group at James Cook University.",
           href: "https://rummerlab.com",
         },
@@ -426,7 +429,7 @@ export const en = {
     partnersTitle: "Around the project",
     partners: [
       { name: "Physioshark Project", href: "https://physioshark.org" },
-      { name: "Rummer Lab — James Cook University", href: "https://rummerlab.com" },
+      { name: "RummerLab — James Cook University", href: "https://rummerlab.com" },
       { name: "IUCN BESTLIFE2030", href: "https://www.bestlife2030.org" },
     ],
   },

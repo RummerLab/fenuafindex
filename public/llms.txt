@@ -1,6 +1,6 @@
 # Fenua FINdex
 
-> Fenua FINdex is a marine-conservation technology project that uses digital ecology, AI-assisted photo identification and citizen science to recognise and monitor individual blacktip reef sharks (Carcharhinus melanopterus) in French Polynesia. It is co-led by researchers at James Cook University (Rummer Lab / Physioshark program) and IREMP, builds on more than a decade of shark monitoring in Mo'orea, and is supported by the IUCN BESTLIFE2030 programme (project FP-8040), co-funded by the European Union.
+> Fenua FINdex is a marine-conservation technology project that uses digital ecology, AI-assisted photo identification and citizen science to recognise and monitor individual blacktip reef sharks (Carcharhinus melanopterus) in French Polynesia. It is co-led by researchers at James Cook University (RummerLab / Physioshark program) and IREMP, builds on more than a decade of shark monitoring in Mo'orea, and is supported by the IUCN BESTLIFE2030 programme (project FP-8040), co-funded by the European Union.
 
 Key facts:
 
