@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import CountUp from "@/components/CountUp";
 import OceanScene from "@/components/OceanScene";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
@@ -73,13 +74,20 @@ export default async function HomePage({
             </div>
           </Reveal>
         </div>
-        <div
-          aria-hidden="true"
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 text-xs uppercase tracking-[0.3em] text-(--ink-muted)/70"
+        {/* A plain anchor so it scrolls smoothly without JS, stays keyboard
+            reachable, and follows the reduced-motion rule already in globals. */}
+        <a
+          href="#explore"
+          className="group absolute bottom-8 left-1/2 -translate-x-1/2 rounded-full px-4 py-2 text-xs uppercase tracking-[0.3em] text-(--ink-muted)/70 transition-colors hover:text-foam"
         >
           <span className="flex flex-col items-center gap-2">
             {home.hero.scrollHint}
-            <svg viewBox="0 0 12 20" className="h-5 w-3 animate-bounce" fill="none">
+            <svg
+              viewBox="0 0 12 20"
+              aria-hidden="true"
+              className="dive-arrow h-5 w-3 transition-transform group-hover:translate-y-1"
+              fill="none"
+            >
               <path
                 d="M6 2v14m0 0 4-4m-4 4-4-4"
                 stroke="currentColor"
@@ -89,17 +97,18 @@ export default async function HomePage({
               />
             </svg>
           </span>
-        </div>
+        </a>
       </section>
 
       {/* ---- Stats ---- */}
-      <section className="relative bg-abyss">
+      <section id="explore" className="relative scroll-mt-20 bg-abyss">
         <div className="mx-auto grid max-w-6xl gap-10 px-5 py-20 sm:grid-cols-3 sm:px-8 sm:py-24">
           {home.stats.map((stat, i) => (
             <Reveal key={stat.value} delay={i * 120} className="text-center sm:text-left">
-              <p className="font-display text-6xl tracking-tight text-foam sm:text-7xl">
-                {stat.value}
-              </p>
+              <CountUp
+                value={stat.value}
+                className="block font-display text-6xl tracking-tight text-foam sm:text-7xl"
+              />
               <p className="mt-3 text-sm leading-relaxed text-(--ink-muted)">{stat.label}</p>
             </Reveal>
           ))}
@@ -141,7 +150,7 @@ export default async function HomePage({
               <Reveal
                 key={item.title}
                 delay={i * 140}
-                className="rounded-3xl border border-shallow/15 bg-abyss/50 p-8 backdrop-blur-sm transition-colors hover:border-shallow/40"
+                className="lift rounded-3xl border border-shallow/15 bg-abyss/50 p-8 backdrop-blur-sm hover:border-shallow/40"
               >
                 <p className="font-display text-4xl text-shallow/60">
                   {String(i + 1).padStart(2, "0")}
@@ -164,7 +173,7 @@ export default async function HomePage({
                 key={step.title}
                 as="li"
                 delay={i * 80}
-                className="group grid gap-4 border-l border-shallow/25 py-8 pl-8 sm:grid-cols-[6rem_1fr] sm:gap-10 sm:pl-12"
+                className="line-draw group grid gap-4 py-8 pl-8 sm:grid-cols-[6rem_1fr] sm:gap-10 sm:pl-12"
               >
                 <p className="relative font-display text-3xl text-shallow/70 transition-colors group-hover:text-foam sm:text-4xl">
                   <span
@@ -260,7 +269,7 @@ export default async function HomePage({
               <Reveal
                 key={partner.name}
                 delay={i * 90}
-                className="rounded-2xl border border-shallow/15 bg-deep/50 px-6 py-5"
+                className="lift rounded-2xl border border-shallow/15 bg-deep/50 px-6 py-5 hover:border-shallow/40"
               >
                 <p className="font-display text-lg tracking-tight">{partner.name}</p>
                 <p className="mt-1.5 text-xs leading-relaxed text-(--ink-muted)">{partner.role}</p>

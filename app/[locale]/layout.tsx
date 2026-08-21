@@ -6,6 +6,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import JsonLd from "@/components/JsonLd";
+import ScrollProgress from "@/components/ScrollProgress";
 import { getDictionary, isLocale, locales, type Locale } from "@/lib/i18n";
 import { site } from "@/lib/site";
 import "@/app/globals.css";
@@ -113,6 +114,7 @@ export default async function LocaleLayout({
         >
           {locale === "fr" ? "Aller au contenu" : "Skip to content"}
         </a>
+        <ScrollProgress />
         <Nav locale={locale as Locale} dict={dict} />
         <main id="main">{children}</main>
         <Footer locale={locale as Locale} dict={dict} />

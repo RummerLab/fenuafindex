@@ -101,6 +101,84 @@ body {
   }
 }
 
+/* Scroll cue in the hero — a slow dip rather than a bouncing arrow */
+@keyframes dive {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.75;
+  }
+  50% {
+    transform: translateY(5px);
+    opacity: 1;
+  }
+}
+
+.dive-arrow {
+  animation: dive 2.4s ease-in-out infinite;
+}
+
+.group:hover .dive-arrow {
+  animation-play-state: paused;
+}
+
+/* Timeline rule that draws itself in, reusing Reveal's .is-visible flag */
+.line-draw {
+  position: relative;
+}
+
+.line-draw::before {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  left: 0;
+  width: 1px;
+  background: color-mix(in oklab, var(--color-shallow) 25%, transparent);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.line-draw.is-visible::before {
+  transform: scaleY(1);
+}
+
+/* Cards settle upward slightly on hover */
+.lift {
+  transition:
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+@media (hover: hover) {
+  .lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 40px -24px rgba(47, 179, 176, 0.55);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dive-arrow {
+    animation: none;
+  }
+
+  .line-draw::before {
+    transform: scaleY(1);
+    transition: none;
+  }
+
+  .lift {
+    transition: border-color 0.4s ease;
+  }
+
+  .lift:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
 .text-balance {
   text-wrap: balance;
 }
