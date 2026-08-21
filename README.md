@@ -1,4 +1,4 @@
-# Fenua FINdex — fenuafindex.com
+# Fenua FINdex - fenuafindex.com
 
 Public website for **Fenua FINdex**: a conservation-technology project using digital ecology, AI-assisted photo identification and citizen science to recognise and monitor individual blacktip reef sharks (*Carcharhinus melanopterus*) in French Polynesia.
 
@@ -68,4 +68,4 @@ English and French are built in from day one. All copy lives in `content/en.ts` 
 
 Shark sightings and enquiries: **photos@fenuafindex.com**
 
-© Fenua FINdex project partners. Code and content all rights reserved unless a licence is added.
+© Fenua FINdex project partners. Code and content: all rights reserved unless a licence is added.
