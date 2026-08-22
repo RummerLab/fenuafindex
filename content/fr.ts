@@ -383,6 +383,11 @@ export const fr: Dictionary = {
           href: null,
         },
         {
+          name: "ORP",
+          role: "Observatoire des Requins de Polynésie — réseau de centres de plongée et de moniteurs recensant les observations de requins et de raies dans toute la Polynésie française.",
+          href: "https://www.orp.pf",
+        },
+        {
           name: "CNRS",
           role: "Centre national de la recherche scientifique — jeux de données à long terme et infrastructure de terrain en Polynésie française.",
           href: "https://www.cnrs.fr",

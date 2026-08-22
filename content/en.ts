@@ -379,6 +379,11 @@ export const en = {
           href: null,
         },
         {
+          name: "ORP",
+          role: "Observatoire des Requins de Polynésie — a territory-wide network of dive centres and instructors recording shark and ray observations across French Polynesia.",
+          href: "https://www.orp.pf",
+        },
+        {
           name: "CNRS",
           role: "French national research centre — long-term datasets and French Polynesian field infrastructure.",
           href: "https://www.cnrs.fr",
