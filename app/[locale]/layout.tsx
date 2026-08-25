@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Fraunces, Inter } from "next/font/google";
 import { notFound } from "next/navigation";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Nav from "@/components/Nav";
@@ -122,6 +123,7 @@ export default async function LocaleLayout({
         <Analytics />
         <SpeedInsights />
       </body>
+      <GoogleAnalytics gaId={site.gaId} />
     </html>
   );
 }
