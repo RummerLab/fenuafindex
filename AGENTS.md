@@ -25,8 +25,8 @@ Content rules: public-safe information only. No internal governance/MoU/data-sha
 ## Setup
 
 ```bash
-npm install
-npm run dev
+pnpm install
+pnpm run dev
 ```
 
 ## Checks
@@ -34,8 +34,8 @@ npm run dev
 After code changes, run and fix:
 
 ```bash
-npm run lint
-npm run build
+pnpm run lint
+pnpm run build
 ```
 
 No environment variables are required to build — this is a static marketing/content site with no API routes or form backend.
@@ -78,6 +78,14 @@ Use `next/image`. Prefer WebP via the optimizer.
 - Never commit secrets or `.env*` files.
 - No user input is accepted on this site yet (no forms, no API routes) — sighting submissions go to `photos@fenuafindex.com` by email until the submission portal is built. When that portal is added, sanitize all input and revisit this section.
 
+## Package manager
+
+This repo uses **pnpm** (`packageManager` in `package.json`).
+
+- Install: `pnpm install` (do not use npm/yarn for installs in this repo).
+- Scripts: `pnpm run <script>` / `pnpm exec <bin>`.
+- Lockfile: `pnpm-lock.yaml` only â€” do not commit `package-lock.json` or `yarn.lock`.
+- Local disk: pnpm's content-addressable store shares package contents across checkouts on the same machine.
 ## Dependency tooling (Next.js)
 
 Follow current Next.js docs for ESLint and TypeScript — do **not** merge Dependabot majors that the Next.js / `typescript-eslint` stack does not support yet.
@@ -90,11 +98,11 @@ Follow current Next.js docs for ESLint and TypeScript — do **not** merge Depen
 ### Framework upgrades
 
 ```bash
-npx @next/codemod@canary upgrade latest
-npx @tailwindcss/upgrade
+pnpm exec @next/codemod@canary upgrade latest
+pnpm exec @tailwindcss/upgrade
 ```
 
-After either upgrade: run `npm run lint` and `npm run build`, fix failures, and update this file if versions/scripts change.
+After either upgrade: run `pnpm run lint` and `pnpm run build`, fix failures, and update this file if versions/scripts change.
 
 ## Pull requests
 

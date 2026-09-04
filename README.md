@@ -15,8 +15,8 @@ The project is co-led by researchers at James Cook University (RummerLab / [Phys
 ## Getting started
 
 ```bash
-npm install
-npm run dev
+pnpm install
+pnpm run dev
 ```
 
 Open http://localhost:3000 — the root redirects to `/en` or `/fr` based on the browser's language.
