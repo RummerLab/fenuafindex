@@ -58,7 +58,7 @@ English and French are built in from day one. All copy lives in `content/en.ts` 
 
 ## Roadmap (v2+)
 
-- Online sighting submission workflow (photo upload, metadata, consent capture)
+- Continued development of the external sighting submission platform
 - Public shark catalogue with per-individual profiles and aggregated maps
 - Researcher validation dashboard behind auth
 - API-backed database kept separate from the public site
@@ -66,6 +66,8 @@ English and French are built in from day one. All copy lives in `content/en.ts` 
 
 ## Contact
 
-Shark sightings and enquiries: **photos@fenuafindex.com**
+Shark sightings and photos: [online submission form](https://fenua-findex.vercel.app/contribuer).
+
+General enquiries and withdrawal requests: **photos@fenuafindex.com**
 
 © Fenua FINdex project partners. Code and content: all rights reserved unless a licence is added.

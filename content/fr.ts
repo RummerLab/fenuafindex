@@ -83,7 +83,7 @@ export const fr: Dictionary = {
         },
         {
           title: "Partagez votre observation",
-          body: "Envoyez la photo avec la date et le lieu. Par e-mail aujourd'hui ; un portail en ligne arrive.",
+          body: "Partagez la photo avec la date et le lieu via notre formulaire d'observation en ligne.",
         },
         {
           title: "L'IA présélectionne",
@@ -109,9 +109,9 @@ export const fr: Dictionary = {
     cta: {
       eyebrow: "Participer",
       title: "Vous avez vu un pointes noires ? Votre photo est une donnée.",
-      body: "En attendant la plateforme en ligne, les observations sont les bienvenues par e-mail. Apprenez à prendre une photo d'identification et découvrez quelles informations joindre.",
+      body: "Partagez votre observation via notre formulaire en ligne. Apprenez à prendre une photo d'identification et découvrez quelles informations joindre.",
       button: "Comment contribuer",
-      emailLabel: "ou envoyez vos photos à",
+      submissionLabel: "ou partagez vos photos via le",
     },
     partners: {
       eyebrow: "Une collaboration",
@@ -190,13 +190,13 @@ export const fr: Dictionary = {
         {
           label: "À venir",
           title: "Lancement de la plateforme",
-          body: "La gouvernance des données, le catalogue de requins et le portail public d'observations sont en cours de développement.",
+          body: "Le catalogue public de requins et la plateforme de recherche sont en cours de développement. Les observations peuvent déjà être soumises via notre formulaire en ligne.",
         },
       ],
     },
     status: {
       title: "Où en est le projet",
-      body: "Fenua FINdex est financé et en phase de construction. L'équipe finalise les accords de recherche, la gouvernance des données et la plateforme technologique. Le catalogue public et le portail de soumission en ligne suivront — en attendant, vos observations sont les bienvenues par e-mail.",
+      body: "Fenua FINdex est financé et en phase de construction. Vous pouvez désormais partager vos photos et observations via notre formulaire en ligne. Le catalogue public de requins et la plateforme de correspondance assistée par IA restent en développement.",
       button: "Contribuer une observation",
     },
   },
@@ -277,11 +277,10 @@ export const fr: Dictionary = {
       title: "Votre photo est une donnée",
       lede: "Une bonne photographie d'aileron dorsal peut prolonger l'histoire d'un requin. Voici comment contribuer une observation utile à la science.",
     },
-    interim: {
-      title: "Le portail d'observations arrive",
-      body: "Notre plateforme de soumission en ligne et le catalogue public de requins sont en développement. D'ici leur lancement, nous accueillons vos observations par e-mail — chaque photo enrichit le catalogue.",
+    submission: {
+      title: "Partagez votre observation en ligne",
+      body: "Utilisez notre formulaire en ligne pour partager vos photos de requins et les détails de votre observation — chaque photo enrichit le catalogue. Le catalogue public de requins et la plateforme de correspondance assistée par IA restent en développement.",
       button: "Envoyer votre observation",
-      emailNote: "photos@fenuafindex.com",
     },
     photoGuide: {
       eyebrow: "Guide de terrain",
@@ -319,8 +318,7 @@ export const fr: Dictionary = {
         "Votre nom, tel que vous souhaitez être crédité·e",
         "Tout élément notable — comportement, blessures, autres requins présents",
       ],
-      emailSubject: "Observation requin — [site, île, date]",
-      emailCta: "Envoyer à photos@fenuafindex.com",
+      submissionCta: "Ouvrir le formulaire d’observation",
     },
     consent: {
       title: "Vos photos, vos droits",
@@ -333,7 +331,7 @@ export const fr: Dictionary = {
     },
     future: {
       title: "Ce qui arrive",
-      body: "La plateforme complète vous permettra de soumettre vos observations directement, de parcourir le catalogue de requins et de savoir quel requin vous avez rencontré — y compris, un jour, où et quand il a été identifié pour la première fois.",
+      body: "Vous pouvez dès aujourd'hui soumettre vos observations via le formulaire en ligne. De futures fonctionnalités vous permettront de parcourir le catalogue public de requins et de savoir quel requin vous avez rencontré, chaque correspondance assistée par IA étant validée par un chercheur.",
     },
   },
   team: {
@@ -419,7 +417,7 @@ export const fr: Dictionary = {
     },
     email: {
       title: "Écrivez-nous",
-      body: "Pour les observations de requins et l'envoi de photos — et toute autre demande pendant le développement du projet :",
+      body: "Pour vos questions sur le projet, les collaborations ou une soumission existante. Pour partager vos photos de requins et observations, veuillez utiliser le formulaire d'observation en ligne.",
       note: "Nous sommes une petite équipe de recherche ; merci de nous laisser un peu de temps pour répondre.",
     },
     sighting: {
@@ -480,6 +478,7 @@ export const fr: Dictionary = {
     funding:
       "Le programme IUCN BESTLIFE2030 (projet FP-8040), cofinancé par l'Union européenne. Une initiative de sciences participatives du programme Physioshark.",
     submissions: "Observations de requins :",
+    submissionLink: "Formulaire d’observation en ligne",
     languageTitle: "Langue",
     rights: "Fenua FINdex. Tous droits réservés.",
     speciesNote: "Carcharhinus melanopterus — requin à pointes noires",

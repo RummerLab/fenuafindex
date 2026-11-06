@@ -60,7 +60,7 @@ export default async function HomePage({
           <Reveal delay={360}>
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <Link
-                href={`/${l}/get-involved`}
+                href={site.submissionUrl}
                 className="rounded-full bg-shallow px-7 py-3.5 text-base font-semibold text-abyss shadow-[0_0_40px_-8px_rgba(47,179,176,0.7)] transition-all hover:bg-foam hover:shadow-[0_0_50px_-6px_rgba(127,227,212,0.8)]"
               >
                 {home.hero.ctaPrimary}
@@ -246,12 +246,12 @@ export default async function HomePage({
                   {home.cta.button}
                 </Link>
                 <p className="text-sm text-(--ink-muted)">
-                  {home.cta.emailLabel}{" "}
+                  {home.cta.submissionLabel}{" "}
                   <a
-                    href={`mailto:${site.email}`}
+                    href={site.submissionUrl}
                     className="font-medium text-foam underline decoration-shallow/40 underline-offset-4 hover:decoration-foam"
                   >
-                    {site.email}
+                    {dict.footer.submissionLink}
                   </a>
                 </p>
               </div>

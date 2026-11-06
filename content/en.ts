@@ -80,7 +80,7 @@ export const en = {
         },
         {
           title: "Share your sighting",
-          body: "Send the photo with the date and location. By email today; an online portal is on the way.",
+          body: "Share the photo with the date and location using our online sighting form.",
         },
         {
           title: "AI shortlists matches",
@@ -106,9 +106,9 @@ export const en = {
     cta: {
       eyebrow: "Get involved",
       title: "Seen a blacktip? Your photo is data.",
-      body: "While the online platform is in development, sightings are welcomed by email. Learn how to take an identification-quality photo and what to include with it.",
+      body: "Share your sighting through our online form. Learn how to take an identification-quality photo and what to include with it.",
       button: "Learn how to contribute",
-      emailLabel: "or email your photos to",
+      submissionLabel: "or share your photos using the",
     },
     partners: {
       eyebrow: "A collaboration",
@@ -187,13 +187,13 @@ export const en = {
         {
           label: "Next",
           title: "Platform launch",
-          body: "Data governance, the shark catalogue and the public sighting portal are in active development.",
+          body: "The public shark catalogue and research platform are in active development. Sightings can already be submitted through our online form.",
         },
       ],
     },
     status: {
       title: "Where the project is now",
-      body: "Fenua FINdex is funded and in its build phase. The team is finalising research agreements, data governance and the technology platform. The public catalogue and online submission portal will follow — in the meantime, sightings are welcome by email.",
+      body: "Fenua FINdex is funded and in its build phase. You can now share photos and sightings through our online form. The public shark catalogue and AI-assisted matching platform remain in development.",
       button: "Contribute a sighting",
     },
   },
@@ -273,11 +273,10 @@ export const en = {
       title: "Your photo is data",
       lede: "One good photograph of a dorsal fin can extend a shark's life story. Here's how to contribute a sighting that science can use.",
     },
-    interim: {
-      title: "The sighting portal is on its way",
-      body: "Our online submission platform and public shark catalogue are in development. Until they launch, we welcome sightings by email — every photo helps build the catalogue.",
-      button: "Email your sighting",
-      emailNote: "photos@fenuafindex.com",
+    submission: {
+      title: "Share your sighting online",
+      body: "Use our online form to share your shark photos and sighting details — every photo helps build the catalogue. The public shark catalogue and AI-assisted matching platform remain in development.",
+      button: "Submit your sighting",
     },
     photoGuide: {
       eyebrow: "Field guide",
@@ -315,8 +314,7 @@ export const en = {
         "Your name, as you'd like it credited",
         "Anything notable — behaviour, injuries, other sharks present",
       ],
-      emailSubject: "Shark sighting — [site, island, date]",
-      emailCta: "Send to photos@fenuafindex.com",
+      submissionCta: "Open the sighting form",
     },
     consent: {
       title: "Your photos, your rights",
@@ -329,7 +327,7 @@ export const en = {
     },
     future: {
       title: "What's coming",
-      body: "The full platform will let you upload sightings directly, browse the shark catalogue, and find out which shark you met — including, one day, where and when it was first identified.",
+      body: "You can submit sightings through the online form today. Future features will let you browse the public shark catalogue and find out which shark you met, with every AI-assisted match validated by a researcher.",
     },
   },
   team: {
@@ -415,7 +413,7 @@ export const en = {
     },
     email: {
       title: "Email us",
-      body: "For shark sightings and photo submissions — and any other enquiry while the project is in development:",
+      body: "For questions about the project, collaborations or an existing submission. To share shark photos and sightings, please use the online sighting form.",
       note: "We're a small research team; please allow a little time for a reply.",
     },
     sighting: {
@@ -474,6 +472,7 @@ export const en = {
     funding:
       "The IUCN BESTLIFE2030 programme (project FP-8040), co-funded by the European Union. A citizen-science initiative of the Physioshark program.",
     submissions: "Shark sightings:",
+    submissionLink: "Online sighting form",
     languageTitle: "Language",
     rights: "Fenua FINdex. All rights reserved.",
     speciesNote: "Carcharhinus melanopterus — blacktip reef shark",
