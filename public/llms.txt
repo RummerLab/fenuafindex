@@ -9,7 +9,7 @@ Key facts:
 - AI shortlists candidate matches for each new photo; trained researchers validate every match before it enters a shark's record. Uncertain matches are never presented as fact.
 - The project integrates annual photographic collections gathered since 2016 and field monitoring logs reaching back to 2013, from the Physioshark program in Mo'orea.
 - Fenua FINdex is the citizen-science arm of the Physioshark program (https://physioshark.org).
-- The public sighting portal and shark catalogue are in development. Until launch, sightings are submitted by email to photos@fenuafindex.com with the date, location, and which side of the shark the photo shows.
+- Sightings and photos are submitted through https://fenua-findex.vercel.app/contribuer with the date, location, and which side of the shark the photo shows. The public shark catalogue and AI-assisted matching platform remain in development.
 - Sensitive shark-nursery locations are never published. Contributors keep copyright of their photos and can withdraw submissions at any time.
 - "Fenua" means land/homeland in Tahitian; "FINdex" joins fin + index.
 
@@ -26,6 +26,7 @@ Key facts:
 
 ## Contact
 
-- Shark sighting submissions and enquiries: photos@fenuafindex.com
+- Shark sighting submissions: https://fenua-findex.vercel.app/contribuer
+- General enquiries and withdrawal requests: photos@fenuafindex.com
 - Parent research program: https://physioshark.org
 - Scientific lead's lab: https://rummerlab.com

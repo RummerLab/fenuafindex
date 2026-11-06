@@ -24,7 +24,8 @@ export default async function ContactPage({
 }) {
   const { locale } = await params;
   const l = (isLocale(locale) ? locale : "en") as Locale;
-  const contact = getDictionary(l).contact;
+  const dict = getDictionary(l);
+  const contact = dict.contact;
 
   return (
     <>
@@ -52,6 +53,12 @@ export default async function ContactPage({
               <p className="mt-3 text-sm leading-relaxed text-(--ink-muted)">
                 {contact.sighting.body}
               </p>
+              <a
+                href={site.submissionUrl}
+                className="mt-5 inline-block rounded-full bg-shallow px-6 py-3 text-sm font-semibold text-abyss transition-colors hover:bg-foam"
+              >
+                {dict.getInvolved.checklist.submissionCta}
+              </a>
               <Link
                 href={`/${l}/get-involved`}
                 className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-shallow transition-colors hover:text-foam"

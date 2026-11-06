@@ -1,6 +1,7 @@
 export const site = {
   name: "Fenua FINdex",
   url: "https://fenuafindex.com",
+  submissionUrl: "https://fenua-findex.vercel.app/contribuer",
   email: "photos@fenuafindex.com",
   gaId: "G-TQWW60B3C0",
   links: {

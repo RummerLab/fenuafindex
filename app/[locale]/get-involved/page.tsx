@@ -30,30 +30,28 @@ export default async function GetInvolvedPage({
   const { locale } = await params;
   const l = (isLocale(locale) ? locale : "en") as Locale;
   const page = getDictionary(l).getInvolved;
-  const mailto = `mailto:${site.email}?subject=${encodeURIComponent(page.checklist.emailSubject)}`;
 
   return (
     <>
       <PageHeader title={page.header.title} lede={page.header.lede} />
 
-      {/* Interim email workflow */}
+      {/* Online sighting form */}
       <section className="bg-abyss">
         <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
           <Reveal className="rounded-[2.5rem] border border-foam/25 bg-gradient-to-br from-mid/70 to-deep p-10 sm:p-14">
             <h2 className="font-display text-3xl tracking-tight text-balance sm:text-4xl">
-              {page.interim.title}
+              {page.submission.title}
             </h2>
             <p className="mt-5 max-w-2xl leading-relaxed text-pretty text-(--ink-muted)">
-              {page.interim.body}
+              {page.submission.body}
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
               <a
-                href={mailto}
+                href={site.submissionUrl}
                 className="rounded-full bg-shallow px-7 py-3.5 text-base font-semibold text-abyss transition-colors hover:bg-foam"
               >
-                {page.interim.button}
+                {page.submission.button}
               </a>
-              <p className="font-mono text-sm text-foam">{page.interim.emailNote}</p>
             </div>
           </Reveal>
         </div>
@@ -114,10 +112,10 @@ export default async function GetInvolvedPage({
             </ul>
             <Reveal delay={200}>
               <a
-                href={mailto}
+                href={site.submissionUrl}
                 className="mt-9 inline-block rounded-full bg-shallow px-6 py-3 text-sm font-semibold text-abyss transition-colors hover:bg-foam"
               >
-                {page.checklist.emailCta}
+                {page.checklist.submissionCta}
               </a>
             </Reveal>
           </div>

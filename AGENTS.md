@@ -12,7 +12,7 @@ Stack: Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS 4, Three.js. 
 
 Public site for Fenua FINdex, an IUCN BESTLIFE2030–funded project (FP-8040, co-funded by the European Union) using AI-assisted photo identification and citizen science to recognise and monitor individual blacktip reef sharks (*Carcharhinus melanopterus*) in French Polynesia. Co-led by researchers at James Cook University (RummerLab / Physioshark program) and IREMP, building on more than a decade of shark monitoring in Mo'orea led by Prof. Jodie Rummer.
 
-The project is funded and in its build phase — no public shark catalogue or submission portal exists yet. Sightings are collected by email (`photos@fenuafindex.com`) until that platform ships. Don't describe the catalogue or AI matching as live or available today.
+The project is funded and in its build phase. Sightings and photos are submitted through the external form at `https://fenua-findex.vercel.app/contribuer` (`site.submissionUrl` in `lib/site.ts`), not by email. The public shark catalogue and AI matching remain in development; don't describe them as live or available today. `photos@fenuafindex.com` remains for general enquiries and withdrawal requests.
 
 All routes live under `/en` and `/fr` via `app/[locale]/`; content strings are typed dictionaries in `content/en.ts` and `content/fr.ts` sharing one `Dictionary` type. `proxy.ts` redirects `/` to the visitor's preferred locale based on `Accept-Language`. When adding a page or string, add it to both dictionaries — the English one defines the type, so add there first and let TypeScript catch the French file.
 
@@ -76,7 +76,7 @@ Use `next/image`. Prefer WebP via the optimizer.
 ## Security
 
 - Never commit secrets or `.env*` files.
-- No user input is accepted on this site yet (no forms, no API routes) — sighting submissions go to `photos@fenuafindex.com` by email until the submission portal is built. When that portal is added, sanitize all input and revisit this section.
+- No user input is accepted on this marketing site (no forms, no API routes). Sighting submissions use the external form at `site.submissionUrl`. If input handling is added to this repository, sanitize all input and revisit this section.
 
 ## Package manager
 

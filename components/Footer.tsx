@@ -55,10 +55,10 @@ export default function Footer({ locale, dict }: { locale: Locale; dict: Diction
             </h2>
             <p className="mt-4 text-sm text-(--ink-muted)">{dict.footer.submissions}</p>
             <a
-              href={`mailto:${site.email}`}
+              href={site.submissionUrl}
               className="mt-1 inline-block text-sm font-medium text-foam underline decoration-shallow/40 underline-offset-4 hover:decoration-foam"
             >
-              {site.email}
+              {dict.footer.submissionLink}
             </a>
           </div>
           <div>

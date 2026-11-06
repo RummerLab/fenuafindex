@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import type { Dictionary } from "@/content/en";
 import type { Locale } from "@/lib/i18n";
+import { site } from "@/lib/site";
 import { FinMark, Wordmark } from "@/components/Logo";
 
 export default function Nav({ locale, dict }: { locale: Locale; dict: Dictionary }) {
@@ -76,7 +77,7 @@ export default function Nav({ locale, dict }: { locale: Locale; dict: Dictionary
             {dict.nav.switchLocaleShort}
           </Link>
           <Link
-            href={`/${locale}/get-involved`}
+            href={site.submissionUrl}
             className="rounded-full bg-shallow px-4 py-2 text-sm font-semibold text-abyss transition-all hover:bg-foam"
           >
             {dict.nav.submit}
@@ -125,7 +126,7 @@ export default function Nav({ locale, dict }: { locale: Locale; dict: Dictionary
               </Link>
             ))}
             <Link
-              href={`/${locale}/get-involved`}
+              href={site.submissionUrl}
               className="mt-3 rounded-full bg-shallow px-5 py-3 text-center text-base font-semibold text-abyss"
             >
               {dict.nav.submit}
