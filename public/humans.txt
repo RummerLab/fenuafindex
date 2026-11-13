@@ -25,8 +25,7 @@
     Funding: IUCN BESTLIFE2030 programme, project FP-8040, co-funded by the European Union
     Parent research program: https://physioshark.org
     Languages: English, French
-    Last update: 2026/11/12
-    Standards: HTML5, CSS3, humans.txt
+    Standards: HTML5, CSS3
     Components: Next.js, React, Tailwind CSS, Three.js
     Hosting: Vercel; the research platform is designed for hosting in France/the EU
 
