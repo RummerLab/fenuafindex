@@ -1,0 +1,38 @@
+/* TEAM */
+
+    Scientific lead: Prof. Jodie Rummer
+    Institution: James Cook University - RummerLab and the Physioshark program
+    Web: https://rummerlab.com
+    Also: https://jodierummer.com
+    Location: Townsville, Australia
+
+    Project co-lead: Dr Clémentine Séguigne
+    Institution: IREMP - Institut de Recherche pour l'Exploitation de la Mer en Polynésie
+    Role: Coordination in French Polynesia
+    Location: Mo'orea, French Polynesia
+
+    Field teams and community observers: the students, researchers, dive centres and
+    volunteer contributors who have recorded, photographed and curated blacktip reef
+    shark sightings in French Polynesia since 2013.
+
+/* SITE */
+
+    Project: Fenua FINdex - AI-assisted photo identification and citizen science for
+    blacktip reef sharks (Carcharhinus melanopterus) in French Polynesia.
+    Site: https://fenuafindex.com
+    Contact: photos@fenuafindex.com
+    Sighting submissions: https://fenua-findex.vercel.app/contribuer
+    Funding: IUCN BESTLIFE2030 programme, project FP-8040, co-funded by the European Union
+    Parent research program: https://physioshark.org
+    Languages: English, French
+    Standards: HTML5, CSS3
+    Components: Next.js, React, Tailwind CSS, Three.js
+    Hosting: Vercel; the research platform is designed for hosting in France/the EU
+
+/* THANKS */
+
+    The Physioshark program and its long-term collaborators in French Polynesia, whose
+    annual photographic collections and field logs reaching back to 2013 make this work
+    possible; the Observatoire des Requins de Polynésie (ORP) and its network of dive
+    centres; CNRS for long-term datasets and field infrastructure; and every contributor
+    who has shared a photograph of a blacktip's dorsal fin.
